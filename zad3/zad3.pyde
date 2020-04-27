@@ -13,14 +13,14 @@ def draw():
     s.vertex(270,350) 
     s.endShape(CLOSE)
     shape(s, 0, 0)  
-    if keyPressed:
+    if keyPressed: # te miały zmieniać zaznaczenie z jednej litery na drugą, a działa też gdy nic nie jest zaznaczone
         if keyCode == LEFT:
             fill(100, 20, 22, 500)
             text("P", width/2-100, height/2+50)
         if keyCode == RIGHT:
             fill(100, 20, 22, 500)
             text("K", width/2, height/2+50)        
-    if mousePressed :
+    if mousePressed : # miało być na najechanie myszą i sama litera imienia
         fill(100, 20, 22, 150)
         text("P", width/2-100, height/2+50)
         text("K", width/2, height/2+50)
@@ -37,5 +37,6 @@ def draw():
     e.vertex(420,120) 
     e.vertex(270,90) 
     e.endShape(CLOSE)
-    shape(e, 0, 0)    
-        
+    shape(e, 0, 0)
+     
+# 1,25p    
