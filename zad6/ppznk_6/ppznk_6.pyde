@@ -36,7 +36,7 @@ def setup():
     malyKwadrat.sketch(500, 300)
     malykolorowyKwadrat = kolorowyKwadrat(40.0)
     malykolorowyKwadrat.sketchKolorowy(random(450), 120)
-    malykolorowykwadrat.sketchKolorowy(random(200), 300)
+    malykolorowyKwadrat.sketchKolorowy(random(200), 300)
     
     duzyPasiastyKwadrat = PasiastyKwadrat(120.0)
     duzyPasiastyKwadrat.sketchPasiasty(300, 50, 12)
