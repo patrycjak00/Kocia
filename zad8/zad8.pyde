@@ -34,23 +34,7 @@ class Customer(): # klient ma wiele cech, ale z perspektywy biblioteki interesuj
         else:
             self.book = ""
             return False                
-                        
-class mojak(): # klient ma wiele cech, ale z perspektywy biblioteki interesuje nas tylko czy ma wypożyczoną książę i jeśli tak to jaką
-    book = "" # ten typ biblioteki umożliwia wypożyczenie jedne książki jednej osobie
-    haveBook = False
-    def requestBook(self, book): # klient może zapytać o książę
-        print("Book You want to borrow is choosen.")
-        self.book = book
-        self.haveBook = True
-        return self.book
-    def returnBook(self): # albo zwrócić jeśli posiada
-        print("Book which you returning is {}".format(self.book))
-        if self.haveBook:
-            self.haveBook = False
-            return self.book
-        else:
-            self.book = ""
-            return False
+
         
 def setup():
     size(220,100)
@@ -58,7 +42,7 @@ def setup():
     books = ["Naocznosc", "Sens Sztuki", "Harry Potter", "Pielgrzym"]
     library = Library(books) # bo biblioteka bez książek, to nie biblioteka
     Madzia = Customer()
-    Patrycja = mojak()
+    Patrycja = Customer()
         
 def draw():
     library.displayAvailableBooks()
@@ -73,14 +57,11 @@ def draw():
 def mouseClicked(): # poklikajcie kilkakrotnie w przyciski: wypożyczneie dwa razy tej samej książki, próba zwrócenia bez posiadania żadnej? Kto podejmuje działanie? 
     if mouseX >100 and mouseX<200:
         if mouseY >10 and mouseY <30:
+            library.lendBook(Patrycja.requestBook("Pielgrzym")) # cała interakcja między biblioteką a klientem łączy się dopiero tutaj, obiekty są oddzielne i każdy ma swoją odpowiedzialność: biblioteka za przechowywane książki, klient za wypożyczoną i to tej odpowiedzialności dotyczą metody, nie używają wzajemnie swoich pól, jest porządek
             library.lendBook(Madzia.requestBook("Naocznosc")) # cała interakcja między biblioteką a klientem łączy się dopiero tutaj, obiekty są oddzielne i każdy ma swoją odpowiedzialność: biblioteka za przechowywane książki, klient za wypożyczoną i to tej odpowiedzialności dotyczą metody, nie używają wzajemnie swoich pól, jest porządek
         if mouseY >40 and mouseY <60:
             library.addBook(Madzia.returnBook())
-            
-def mouseClicked(): # poklikajcie kilkakrotnie w przyciski: wypożyczneie dwa razy tej samej książki, próba zwrócenia bez posiadania żadnej? Kto podejmuje działanie? 
-    if mouseX >100 and mouseX<200:
-        if mouseY >10 and mouseY <30:
-            library.lendBook(Patrycja.requestBook("Pielgrzym")) # cała interakcja między biblioteką a klientem łączy się dopiero tutaj, obiekty są oddzielne i każdy ma swoją odpowiedzialność: biblioteka za przechowywane książki, klient za wypożyczoną i to tej odpowiedzialności dotyczą metody, nie używają wzajemnie swoich pól, jest porządek
-        if mouseY >40 and mouseY <60:
             library.addBook(Patrycja.returnBook())
+            
+# 0,25/0,5 za tą część zadania, gdzie dalsza z planem klas bankomatu?
           
