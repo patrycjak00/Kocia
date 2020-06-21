@@ -11,7 +11,7 @@ class Cat(Pet): # klasa Cat dziedziczy po Pet
     def speak(self): #W związku z czym musi mieć zaimplementowaną metodę abstrakcyjną o tej samej nazwie, spróbujcie zakomentować tą linię, odpalić program i przeczytać treść błędu :)
         text('meow', random(50, width-70), random(50, height-50))
         return 'meow'
-class Dog(Pet):
+class Dog(Pet):s
     def __init__(self, name):
         self.name = name
     def speak(self):
@@ -24,16 +24,16 @@ class Dog(Pet):
 class Bunny(Pet):
     pass
     
-class kicia(Pet):
+class Kicia(Pet): # nazwy klas z dużej litery
         def __init__(self, name):
             self.name = name
         def speak (self): #
             text('meowmeowkicia', random(42, width-29), random(50, height-50))
             return 'meowmeowkicia'
         
-        def gimmePaw(self):
+        def gimmePaw(self): # podaj łąpę u kota? i daje zdjęcie?
             image(loadImage("kitka.jpg"), random(30, width-110), random(30, height-50))
-        def __add__(self, other): 
+        def __add__(self, other):  # miało być odejmowanie
             return self.name[0]+ ' i ' + other.name[0]
     
 def setup():
@@ -41,12 +41,12 @@ def setup():
     textSize(20)
     rex = Dog('Rex')
     benio = Dog('Benio')
-    henio = kicia('Kicia') 
+    henio = Kicia('Kicia') 
    
     global list_of_pets
     list_of_pets = [rex, benio, henio] 
-    print(isinstance(henio, kicia)) 
-    print(rex+henio) 
+    print(isinstance(henio, Kicia)) 
+    print(rex+henio) # miało być odejmowanie?
 
 
 def draw(): 
@@ -56,5 +56,7 @@ def mouseClicked():
     for pet in list_of_pets:
         pet.speak() # dla różnych typów (Cat, Dog) klas wywołujemy to samo polecenie jedną linijką - to właśnie przejaw polimorfizmu
         
-        if isinstance(pet, kicia): # te które są charakterystyczne dla danego typu obiektu, musimy ująć w warunek, bo na niewłaściwym typie wywaliłoby błąd
+        if isinstance(pet, Kicia): # te które są charakterystyczne dla danego typu obiektu, musimy ująć w warunek, bo na niewłaściwym typie wywaliłoby błąd
             pet.gimmePaw()
+            
+# 1 pkt, widzę, że kopiowanie ze zmienionymi nazwami
