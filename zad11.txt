@@ -2,4 +2,7 @@ Warsztat samochodowy.
 Klient: mam problem ze zmianą biegów, wydają dźwięk zgrzytania podczas zmiany.
 Mechanik: może to być problem z samoregulatorem naciągu linki przy pedale sprzęgła lub zużyte są synchronizatory skrzyni biegów. Służą one do wyrównywania prędkości obrotowej kół zębatych.
 WZORZEC: fasada
-DLACZEGO: klient posługuję się prosty, zrozumiałym językiem, a mechanik specjalistycznym, którego znajomość jest wymagana by dokonać jakiejś zmiany, mechanik jest fasadą, przyjmuje proste polecenia, a następnie tłumaczy na skomplikowane procesy. 
+DLACZEGO: klient posługuję się prosty, zrozumiałym językiem, a mechanik specjalistycznym, którego znajomość jest wymagana by dokonać jakiejś zmiany, mechanik jest fasadą, przyjmuje proste polecenia, a następnie tłumaczy na skomplikowane procesy.
+
+Mechanik nie powinien tego tłumaczyć, tylko zrobić, bo rolą klienta nie jest to wiedzieć.
+1,5pkt  
